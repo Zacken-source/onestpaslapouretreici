@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>On est pas là pour être ici</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            color: white;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .phrase {
+            font-size: 2.5rem;
+            margin: 2rem;
+            padding: 2rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .phrase:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .counter {
+            font-size: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        button {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #e74c3c;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            padding: 1rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>On est pas là pour être ici</h1>
+    </header>
+
+    <main>
+        <div class="phrase" onclick="this.style.transform = 'scale(1.1)'">
+            On est pas là pour être ici
+        </div>
+
+        <div class="counter">
+            Nombre de fois que vous n'êtes pas là: <span id="count">0</span>
+        </div>
+
+        <button onclick="incrementCounter()">Je ne suis pas là</button>
+    </main>
+
+    <footer>
+        <p>© 2024 - Un site web pour ceux qui ne sont pas là</p>
+    </footer>
+
+    <script>
+        let count = 0;
+        function incrementCounter() {
+            count++;
+            document.getElementById('count').textContent = count;
+            if (count > 10) {
+                document.body.style.background = `linear-gradient(${count * 20}deg, #2c3e50, #3498db)`;
+            }
+        }
+    </script>
+</body>
+</html>
+Last edited just now
+
+
